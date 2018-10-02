@@ -27,7 +27,6 @@ namespace factorial_draw
             Point coord = me.Location;
             Brush aBrush = (Brush)Brushes.Black;
             points.Add(coord);
-        //   g.FillRectangle(aBrush, (float)coord.X+x0, (-(float)coord.Y) +y0, 1, 1);
             drawpic.Invalidate();
         }
 
@@ -36,7 +35,6 @@ namespace factorial_draw
             if(points.Count>1)
             drawing = true;
             drawpic.Invalidate();
-       //  drawpic.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBox1_Paint);
         }
 
         bool drawing = false;
@@ -53,20 +51,10 @@ namespace factorial_draw
             }
             int x0 = drawpic.Right / 2, y0 = drawpic.Bottom / 2;
             int xmax = drawpic.Right, ymax = drawpic.Bottom;
-
-            for (int i = 1; i < ymax / 2; i++)
-            {
-                for (int x = 0; x <= xmax / 2; x++)
-                { 
-                      //  g.FillRectangle(aBrush, (float)x,  i, 1, 1);
-                }
-
-            }
-
+             
             for (int t = 0; t < points.Count; t++)
             {
-            //    e.Graphics.DrawLine(pen, (float)points[t].X + x0, (-(float)points[t].Y) + y0, (float)points[t].X + x0+10, (-(float)points[t].Y) + y0+10);
-                g.FillRectangle(aBrush, points[t].X, (points[t].Y) , 2, 2);
+                   g.FillRectangle(aBrush, points[t].X, (points[t].Y) , 2, 2);
             }
             int k = count;
             if(drawing)
@@ -86,8 +74,6 @@ namespace factorial_draw
                      progressBar1.Value = p;
                
                     }
-               
-                 
                     g.FillRectangle(aBrush, midl.X, (midl.Y), 1, 1);
                     last = midl;
                     pos2 = rand.Next(0, points.Count);
@@ -96,8 +82,6 @@ namespace factorial_draw
                 }
             }
             drawing = false;
-            //   g.FillRectangle(aBrush, (float)buf.x1+x0, (-(float)buf.x2)+y0, 1, 1);
-
         }
         Point getmiddle (Point a, Point b)
         {
@@ -129,7 +113,7 @@ namespace factorial_draw
         }
         private void dr(object sender, EventArgs e)
         {
-drawin();
+        drawin();
         }
         void drawin()
         {
